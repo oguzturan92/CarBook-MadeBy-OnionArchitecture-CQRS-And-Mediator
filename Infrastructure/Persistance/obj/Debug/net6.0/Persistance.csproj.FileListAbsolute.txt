@@ -15,3 +15,5 @@ C:\Users\proje\CarBook\Infrastructure\Persistance\obj\Debug\net6.0\Persistance.d
 C:\Users\proje\CarBook\Infrastructure\Persistance\obj\Debug\net6.0\ref\Persistance.dll
 C:\Users\proje\CarBook\Infrastructure\Persistance\obj\Debug\net6.0\Persistance.pdb
 C:\Users\proje\CarBook\Infrastructure\Persistance\obj\Debug\net6.0\Persistance.genruntimeconfig.cache
+C:\Users\proje\CarBook\Infrastructure\Persistance\bin\Debug\net6.0\Application.dll
+C:\Users\proje\CarBook\Infrastructure\Persistance\bin\Debug\net6.0\Application.pdb
