@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "/EkB7AsMbJWIw1mRjgqJ6Nd4uxR11qFQLB6Ur56pjtC7z8nojpa8yTfOhvOBYtfV7O7BwrwIVj8JXpnGzRXmfQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\proje\\CarBook\\Frontends\\WebUI\\WebUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\oğuzhan\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,12 @@
+c:\Users\proje\CarBook\Frontends\Dtos\bin\Debug\net6.0\Dtos.deps.json
+c:\Users\proje\CarBook\Frontends\Dtos\bin\Debug\net6.0\Dtos.dll
+c:\Users\proje\CarBook\Frontends\Dtos\bin\Debug\net6.0\ref\Dtos.dll
+c:\Users\proje\CarBook\Frontends\Dtos\bin\Debug\net6.0\Dtos.pdb
+c:\Users\proje\CarBook\Frontends\Dtos\obj\Debug\net6.0\Dtos.csproj.AssemblyReference.cache
+c:\Users\proje\CarBook\Frontends\Dtos\obj\Debug\net6.0\Dtos.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\proje\CarBook\Frontends\Dtos\obj\Debug\net6.0\Dtos.AssemblyInfoInputs.cache
+c:\Users\proje\CarBook\Frontends\Dtos\obj\Debug\net6.0\Dtos.AssemblyInfo.cs
+c:\Users\proje\CarBook\Frontends\Dtos\obj\Debug\net6.0\Dtos.csproj.CoreCompileInputs.cache
+c:\Users\proje\CarBook\Frontends\Dtos\obj\Debug\net6.0\Dtos.dll
+c:\Users\proje\CarBook\Frontends\Dtos\obj\Debug\net6.0\ref\Dtos.dll
+c:\Users\proje\CarBook\Frontends\Dtos\obj\Debug\net6.0\Dtos.pdb
