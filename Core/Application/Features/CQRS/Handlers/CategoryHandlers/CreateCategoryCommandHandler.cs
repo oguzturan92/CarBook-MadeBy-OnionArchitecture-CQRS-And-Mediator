@@ -18,10 +18,11 @@ namespace Application.Features.CQRS.Handlers.CategoryHandlers
 
         public async Task Handle(CreateCategoryCommand command)
         {
-            await _repository.CreateAsync(new Category
+            var entity = new Category
             {
                 CategoryName = command.CategoryName
-            });
+            };
+            await _repository.CreateAsync(entity);
         }
     }
 }

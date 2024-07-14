@@ -64,3 +64,9 @@ c:\Users\proje\CarBook\Presentation\WebApi\obj\Debug\net6.0\WebApi.pdb
 c:\Users\proje\CarBook\Presentation\WebApi\obj\Debug\net6.0\WebApi.genruntimeconfig.cache
 C:\Users\proje\CarBook\Presentation\WebApi\bin\Debug\net6.0\Application.dll
 C:\Users\proje\CarBook\Presentation\WebApi\bin\Debug\net6.0\Application.pdb
+C:\Users\proje\CarBook\Presentation\WebApi\bin\Debug\net6.0\MediatR.dll
+C:\Users\proje\CarBook\Presentation\WebApi\bin\Debug\net6.0\MediatR.Contracts.dll
+C:\Users\proje\CarBook\Presentation\WebApi\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+C:\Users\proje\CarBook\Presentation\WebApi\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\proje\CarBook\Presentation\WebApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\proje\CarBook\Presentation\WebApi\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll

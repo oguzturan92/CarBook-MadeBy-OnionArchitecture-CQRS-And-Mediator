@@ -18,7 +18,7 @@ namespace Application.Features.CQRS.Handlers.CarHandlers
 
         public async Task Handle(CreateCarCommand command)
         {
-            await _repository.CreateAsync(new Car
+            var entity = new Car
             {
                 CarModel = command.CarModel,
                 CarBıgImage = command.CarBıgImage,
@@ -29,7 +29,8 @@ namespace Application.Features.CQRS.Handlers.CarHandlers
                 CarLuggage = command.CarLuggage,
                 CarFuelType = command.CarFuelType,
                 BrandId = command.BrandId
-            });
+            };
+            await _repository.CreateAsync(entity);
         }
     }
 }

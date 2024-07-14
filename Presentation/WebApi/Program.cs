@@ -9,6 +9,7 @@ using Application.Interfaces.CarRepositories;
 using Persistance.Context;
 using Persistance.Repositories;
 using Persistance.Repositories.CarRepositories;
+using Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -59,6 +60,10 @@ var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddScoped<GetContactByIdQueryHandler>();
     builder.Services.AddScoped<GetContactQueryHandler>();
     // CQRS CONFIGURATION ----- FINISH -----------------------------------------------------------------------------------
+
+    // APPLICATION/SERVICES İÇİNDEKİ İŞLEMİ TANIMLADIK ----- START ------------------------------------------------------
+    builder.Services.AddApplicationService(builder.Configuration);
+    // APPLICATION/SERVICES İÇİNDEKİ İŞLEMİ TANIMLADIK ----- START ------------------------------------------------------
 
 // Add services to the container.
 

@@ -18,14 +18,15 @@ namespace Application.Features.CQRS.Handlers.ContactHandlers
 
         public async Task Handle(CreateContactCommand command)
         {
-            await _repository.CreateAsync(new Contact
+            var entity = new Contact
             {
                 ContactName = command.ContactName,
                 ContactMail = command.ContactMail,
                 ContactSubject = command.ContactSubject,
                 ContactMessage = command.ContactMessage,
                 ContactDate = command.ContactDate
-            });
+            };
+            await _repository.CreateAsync(entity);
         }
     }
 }

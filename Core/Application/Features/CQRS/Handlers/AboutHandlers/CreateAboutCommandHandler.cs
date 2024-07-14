@@ -18,12 +18,13 @@ namespace Application.Features.CQRS.Handlers.AboutHandlers
 
         public async Task Handle(CreateAboutCommand command)
         {
-            await _repository.CreateAsync(new About
+            var entity = new About
             {
                 AboutTitle = command.AboutTitle,
                 AboutDescription = command.AboutDescription,
                 AboutImage = command.AboutImage
-            });
+            };
+            await _repository.CreateAsync(entity);
         }
     }
 }

@@ -18,10 +18,11 @@ namespace Application.Features.CQRS.Handlers.BrandHandlers
 
         public async Task Handle(CreateBrandCommand command)
         {
-            await _repository.CreateAsync(new Brand
+            var entity = new Brand
             {
                 BrandName = command.BrandName
-            });
+            };
+            await _repository.CreateAsync(entity);
         }
     }
 }

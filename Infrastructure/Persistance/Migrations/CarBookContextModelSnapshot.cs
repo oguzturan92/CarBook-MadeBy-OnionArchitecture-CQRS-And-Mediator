@@ -257,29 +257,29 @@ namespace Persistance.Migrations
                     b.ToTable("Features");
                 });
 
-            modelBuilder.Entity("Domain.Entities.FooterAddres", b =>
+            modelBuilder.Entity("Domain.Entities.FooterAddress", b =>
                 {
-                    b.Property<int>("FooterAddresId")
+                    b.Property<int>("FooterAddressId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FooterAddresId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FooterAddressId"), 1L, 1);
 
-                    b.Property<string>("FooterAddresContent")
+                    b.Property<string>("FooterAddressContent")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FooterAddresDescription")
+                    b.Property<string>("FooterAddressDescription")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FooterAddresMail")
+                    b.Property<string>("FooterAddressMail")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FooterAddresPhone")
+                    b.Property<string>("FooterAddressPhone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("FooterAddresId");
+                    b.HasKey("FooterAddressId");
 
-                    b.ToTable("FooterAddres");
+                    b.ToTable("FooterAddresses");
                 });
 
             modelBuilder.Entity("Domain.Entities.Location", b =>

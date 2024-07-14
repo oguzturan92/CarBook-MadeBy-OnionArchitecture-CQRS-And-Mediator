@@ -18,13 +18,14 @@ namespace Application.Features.CQRS.Handlers.BannerHandlers
 
         public async Task Handle(CreateBannerCommand command)
         {
-            await _repository.CreateAsync(new Banner
+            var entity = new Banner
             {
                 BannerTitle = command.BannerTitle,
                 BannerSubTitle = command.BannerSubTitle,
                 BannerVideoTitle = command.BannerVideoTitle,
                 BannerVideoUrl = command.BannerVideoUrl
-            });
+            };
+            await _repository.CreateAsync(entity);
         }
     }
 }
