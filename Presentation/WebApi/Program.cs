@@ -10,6 +10,8 @@ using Persistance.Context;
 using Persistance.Repositories;
 using Persistance.Repositories.CarRepositories;
 using Application.Services;
+using Application.Interfaces.BlogRepository;
+using Persistance.Repositories.BlogRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +22,7 @@ var builder = WebApplication.CreateBuilder(args);
     // REPOSITORY CONFIGURATION ----- START -----------------------------------------------------------------------------
     builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
     builder.Services.AddScoped(typeof(ICarRepository), typeof(CarRepository));
+    builder.Services.AddScoped(typeof(IBlogRepository), typeof(BlogRepository));
     // REPOSITORY CONFIGURATION ----- FINISH -----------------------------------------------------------------------------
 
     // CQRS CONFIGURATION ----- START ------------------------------------------------------------------------------------
@@ -47,6 +50,7 @@ var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddScoped<GetCarByIdQueryHandler>();
     builder.Services.AddScoped<GetCarQueryHandler>();
     builder.Services.AddScoped<GetCarWithBrandQueryHandler>();
+    builder.Services.AddScoped<GetCarWithBrandLast5QueryHandler>();
 
     builder.Services.AddScoped<CreateCategoryCommandHandler>();
     builder.Services.AddScoped<UpdateCategoryCommandHandler>();

@@ -12,7 +12,6 @@ namespace Persistance.Repositories.CarRepositories
     public class CarRepository : ICarRepository
     {
         private readonly CarBookContext _context;
-
         public CarRepository(CarBookContext context)
         {
             _context = context;
@@ -21,6 +20,11 @@ namespace Persistance.Repositories.CarRepositories
         public async Task<List<Car>> GetCarWithBrand()
         {
             return await _context.Cars.Include(x => x.Brand).ToListAsync();
+        }
+
+        public async Task<List<Car>> GetCarWithBrandLast5()
+        {
+            return await _context.Cars.Include(x => x.Brand).OrderByDescending(x => x.CarId).Take(5).ToListAsync();
         }
     }
 }

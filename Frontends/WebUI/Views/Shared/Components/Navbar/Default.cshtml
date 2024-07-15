@@ -14,9 +14,9 @@
                     <li class="nav-item @ViewBag.aboutActive"><a asp-controller="About" asp-action="Index" class="nav-link">Hakkımızda</a></li>
                     <li class="nav-item @ViewBag.serviceActive"><a asp-controller="Service" asp-action="Index" class="nav-link">Hizmetler</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Fiyatlar</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Arabalar</a></li>
+                    <li class="nav-item @ViewBag.carActive"><a asp-controller="Car" asp-action="Index" class="nav-link">Arabalar</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">İletişim</a></li>
+                    <li class="nav-item @ViewBag.contactActive"><a asp-controller="Contact" asp-action="Index" class="nav-link">İletişim</a></li>
                 </ul>
             </div>
         </div>

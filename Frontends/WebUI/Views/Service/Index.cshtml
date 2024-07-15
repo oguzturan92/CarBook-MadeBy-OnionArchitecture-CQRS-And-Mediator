@@ -1,9 +1,7 @@
-@model List<ResultServiceDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "_Layout";
 }
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('/Template/images/bg_3.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
@@ -17,33 +15,6 @@
         </div>
     </section>
 
-    <section class="ftco-section">
-        <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-md-7 text-center heading-section ftco-animate">
-                    <span class="subheading">Hizmetlerimiz</span>
-                    <h2 class="mb-3">Sizin İçin Hizmetlerimiz</h2>
-                </div>
-            </div>
-            <div class="row">
-
-                @foreach (var item in Model)
-                {
-                    <div class="col-md-3">
-                        <div class="services services-2 w-100 text-center">
-                            <div class="icon d-flex align-items-center justify-content-center">
-                                <span class="@item.ServiceIcon"></span>
-                            </div>
-                            <div class="text w-100">
-                                <h3 class="heading mb-2">@item.ServiceTitle</h3>
-                                <p>@item.ServiceDescription</p>
-                            </div>
-                        </div>
-                    </div>
-                }
-
-            </div>
-        </div>
-    </section>
+    @await Component.InvokeAsync("Service")
 		
 	@await Component.InvokeAsync("BecomeADriver")
