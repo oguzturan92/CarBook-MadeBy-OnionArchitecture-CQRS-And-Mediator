@@ -5,13 +5,15 @@ using Application.Features.CQRS.Handlers.CarHandlers;
 using Application.Features.CQRS.Handlers.CategoryHandlers;
 using Application.Features.CQRS.Handlers.ContactHandlers;
 using Application.Interfaces;
-using Application.Interfaces.CarRepositories;
+using Application.Interfaces.CarInterfaces;
 using Persistance.Context;
 using Persistance.Repositories;
 using Persistance.Repositories.CarRepositories;
 using Application.Services;
-using Application.Interfaces.BlogRepository;
+using Application.Interfaces.BlogInterfaces;
 using Persistance.Repositories.BlogRepositories;
+using Application.Interfaces.CarPricingInterfaces;
+using Persistance.Repositories.CarPricingRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +25,7 @@ var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
     builder.Services.AddScoped(typeof(ICarRepository), typeof(CarRepository));
     builder.Services.AddScoped(typeof(IBlogRepository), typeof(BlogRepository));
+    builder.Services.AddScoped(typeof(ICarPricingRepository), typeof(CarPricingRepository));
     // REPOSITORY CONFIGURATION ----- FINISH -----------------------------------------------------------------------------
 
     // CQRS CONFIGURATION ----- START ------------------------------------------------------------------------------------

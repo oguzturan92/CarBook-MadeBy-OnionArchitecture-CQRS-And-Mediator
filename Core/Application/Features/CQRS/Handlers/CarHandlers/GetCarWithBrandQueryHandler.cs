@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Application.Features.CQRS.Results.CarResults;
 using Application.Interfaces;
-using Application.Interfaces.CarRepositories;
+using Application.Interfaces.CarInterfaces;
 using Domain.Entities;
 
 namespace Application.Features.CQRS.Handlers.CarHandlers

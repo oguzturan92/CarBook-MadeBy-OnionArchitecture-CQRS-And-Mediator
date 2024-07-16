@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Application.Blogs.Mediator.Queries.BlogQueries;
 using Application.Blogs.Mediator.Results.BlogResults;
 using Application.Interfaces;
-using Application.Interfaces.BlogRepository;
+using Application.Interfaces.BlogInterfaces;
 using Domain.Entities;
 using MediatR;
 

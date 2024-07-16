@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Domain.Entities;
 
-namespace Application.Interfaces.BlogRepository
+namespace Application.Interfaces.BlogInterfaces
 {
     public interface IBlogRepository
     {

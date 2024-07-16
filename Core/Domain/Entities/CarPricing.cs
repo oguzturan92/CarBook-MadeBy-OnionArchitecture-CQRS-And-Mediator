@@ -12,5 +12,6 @@ namespace Domain.Entities
         public Car Car { get; set; }
         public int PricingId { get; set; }
         public Pricing Pricing { get; set; }
+        public decimal Amount { get; set; }
     }
 }
