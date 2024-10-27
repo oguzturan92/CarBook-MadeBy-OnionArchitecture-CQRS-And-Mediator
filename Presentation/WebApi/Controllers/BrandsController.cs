@@ -55,7 +55,7 @@ namespace WebApi.Controllers
             return Ok("Brand Güncellendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> BrandDelete(int id)
         {
             await _removeBrandCommandHandler.Handle(new RemoveBrandCommand(id));

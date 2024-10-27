@@ -23,8 +23,8 @@ namespace WebUI.ViewComponents.About
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultAboutDto>>(jsonData);
-                return View(values);
+                var getOneAboutDto = JsonConvert.DeserializeObject<GetOneAboutDto>(jsonData);
+                return View(getOneAboutDto);
             }
             return View();
         }

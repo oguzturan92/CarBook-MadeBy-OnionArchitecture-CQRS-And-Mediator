@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Application.Blogs.Mediator.Commands.BlogCommands;
 using Application.Blogs.Mediator.Queries.BlogQueries;
+using Application.Features.Mediator.Queries.BlogQueries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -48,7 +49,7 @@ namespace WebApi.Controller
             return Ok("Blog Güncellendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> BlogDelete(int id)
         {
             await _mediator.Send(new RemoveBlogCommand(id));
@@ -59,6 +60,13 @@ namespace WebApi.Controller
         public async Task<IActionResult> GetBlogLast3WithAuthor()
         {
             var values = await _mediator.Send(new GetBlogLast3WithAuthorQuery());
+            return Ok(values);
+        }
+
+        [HttpGet("GetAllBlogsWithAuthor")]
+        public async Task<IActionResult> GetAllBlogsWithAuthor()
+        {
+            var values = await _mediator.Send(new GetAllBlogsWithAuthorQuery());
             return Ok(values);
         }
 

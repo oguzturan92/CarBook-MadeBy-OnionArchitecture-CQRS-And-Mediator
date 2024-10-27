@@ -14,6 +14,14 @@ using Application.Interfaces.BlogInterfaces;
 using Persistance.Repositories.BlogRepositories;
 using Application.Interfaces.CarPricingInterfaces;
 using Persistance.Repositories.CarPricingRepositories;
+using Application.Interfaces.TagCloudInterfaces;
+using Persistance.Repositories.TagCloudRepositories;
+using Persistance.Repositories.CommentRepositoires;
+using Application.Features.RepositoryPattern;
+using Persistance.Repositories.BannerRepositories;
+using Application.Interfaces.BannerInterfaces;
+using Persistance.Repositories.AboutRepositories;
+using Application.Interfaces.AboutInterfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,23 +31,23 @@ var builder = WebApplication.CreateBuilder(args);
 
     // REPOSITORY CONFIGURATION ----- START -----------------------------------------------------------------------------
     builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+    builder.Services.AddScoped(typeof(IAboutRepository), typeof(AboutRepository));
     builder.Services.AddScoped(typeof(ICarRepository), typeof(CarRepository));
+    builder.Services.AddScoped(typeof(IBannerRepository), typeof(BannerRepository));
     builder.Services.AddScoped(typeof(IBlogRepository), typeof(BlogRepository));
     builder.Services.AddScoped(typeof(ICarPricingRepository), typeof(CarPricingRepository));
+    builder.Services.AddScoped(typeof(ITagCloudRepository), typeof(TagCloudRepository));
+    builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(CommentRepository<>));
     // REPOSITORY CONFIGURATION ----- FINISH -----------------------------------------------------------------------------
 
     // CQRS CONFIGURATION ----- START ------------------------------------------------------------------------------------
     builder.Services.AddScoped<CreateAboutCommandHandler>();
     builder.Services.AddScoped<UpdateAboutCommandHandler>();
-    builder.Services.AddScoped<RemoveAboutCommandHandler>();
-    builder.Services.AddScoped<GetAboutByIdQueryHandler>();
-    builder.Services.AddScoped<GetAboutQueryHandler>();
+    builder.Services.AddScoped<GetAboutOneQueryHandler>();
 
     builder.Services.AddScoped<CreateBannerCommandHandler>();
     builder.Services.AddScoped<UpdateBannerCommandHandler>();
-    builder.Services.AddScoped<RemoveBannerCommandHandler>();
-    builder.Services.AddScoped<GetBannerByIdQueryHandler>();
-    builder.Services.AddScoped<GetBannerQueryHandler>();
+    builder.Services.AddScoped<GetBannerOneQueryHandler>();
 
     builder.Services.AddScoped<CreateBrandCommandHandler>();
     builder.Services.AddScoped<UpdateBrandCommandHandler>();

@@ -1,0 +1,27 @@
+@model UpdateFeatureDto
+@{
+    ViewData["Title"] = "FeatureUpdate";
+    Layout = "_LayoutAdmin";
+}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Özellik Düzenle</h4>
+                    <hr>
+                    <form asp-controller="Feature" asp-action="FeatureUpdate" method="post">
+                        <input type="hidden" asp-for="FeatureId">
+                        <div class="form-group">
+                            <label for="FeatureName">Özellik</label>
+                            <input type="text" asp-for="FeatureName" id="FeatureName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success" type="submit">Kaydet</button>
+                            <a asp-area="Admin" asp-controller="Feature" asp-action="FeatureList" class="btn btn-dark">Geri</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -48,7 +48,7 @@ namespace WebApi.Controller
             return Ok("Author Güncellendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> AuthorDelete(int id)
         {
             await _mediator.Send(new RemoveAuthorCommand(id));

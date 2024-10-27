@@ -1,0 +1,37 @@
+
+    <div class="menu-overlay"></div>
+
+    <!-- jQuery  -->
+    <script src="/AdminTemplate/js/jquery.min.js"></script>
+    <script src="/AdminTemplate/js/bootstrap.bundle.min.js"></script>
+    <script src="/AdminTemplate/js/metismenu.min.js"></script>
+    <script src="/AdminTemplate/js/waves.js"></script>
+    <script src="/AdminTemplate/js/simplebar.min.js"></script>
+
+    <!-- Morris Custom Js-->
+    <script src="/AdminTemplate/pages/dashboard-demo.js"></script>
+
+    <!-- App js -->
+    <script src="/AdminTemplate/js/theme.js"></script>
+
+<script>
+	if ("@TempData["text"]" != "")
+	{
+		Swal.fire({
+			position: "center",
+			icon: "@TempData["icon"]",
+			html: "@TempData["text"]",
+			showConfirmButton: false,
+			timer: 1500
+		});
+	}
+	if ("@TempData["textOk"]" != "")
+	{
+		Swal.fire({
+			position: "center",
+			icon: "@TempData["icon"]",
+			html: "@TempData["textOk"]",
+			showConfirmButton: true
+		});
+	}
+</script>

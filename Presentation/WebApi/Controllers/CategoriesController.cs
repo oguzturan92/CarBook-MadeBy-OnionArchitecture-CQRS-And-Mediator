@@ -55,7 +55,7 @@ namespace WebApi.Controllers
             return Ok("Category Güncellendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> CategoryDelete(int id)
         {
             await _removeCategoryCommandHandler.Handle(new RemoveCategoryCommand(id));

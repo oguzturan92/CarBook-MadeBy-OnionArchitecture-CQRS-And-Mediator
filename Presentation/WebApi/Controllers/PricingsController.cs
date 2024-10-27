@@ -48,7 +48,7 @@ namespace WebApi.Controller
             return Ok("Pricing Güncellendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> PricingDelete(int id)
         {
             await _mediator.Send(new RemovePricingCommand(id));

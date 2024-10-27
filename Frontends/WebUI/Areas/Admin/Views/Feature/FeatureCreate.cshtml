@@ -1,0 +1,26 @@
+@model CreateFeatureDto
+@{
+    ViewData["Title"] = "FeatureCreate";
+    Layout = "_LayoutAdmin";
+}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Özellik Ekle</h4>
+                    <hr>
+                    <form asp-controller="Feature" asp-action="FeatureCreate" method="post">
+                        <div class="form-group">
+                            <label for="FeatureName">Özellik</label>
+                            <input type="text" asp-for="FeatureName" id="FeatureName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success" type="submit">Kaydet</button>
+                            <a asp-area="Admin" asp-controller="Feature" asp-action="FeatureList" class="btn btn-dark">Geri</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -48,7 +48,7 @@ namespace WebApi.Controller
             return Ok("SocialMedia Güncellendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> SocialMediaDelete(int id)
         {
             await _mediator.Send(new RemoveSocialMediaCommand(id));

@@ -48,7 +48,7 @@ namespace WebApi.Controller
             return Ok("Feature Güncellendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> FeatureDelete(int id)
         {
             await _mediator.Send(new RemoveFeatureCommand(id));

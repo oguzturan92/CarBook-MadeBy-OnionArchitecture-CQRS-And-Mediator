@@ -48,7 +48,7 @@ namespace WebApi.Controller
             return Ok("Testimonial Güncellendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> TestimonialDelete(int id)
         {
             await _mediator.Send(new RemoveTestimonialCommand(id));

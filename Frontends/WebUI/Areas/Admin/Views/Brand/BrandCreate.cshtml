@@ -1,0 +1,26 @@
+@model CreateBrandDto
+@{
+    ViewData["Title"] = "BrandCreate";
+    Layout = "_LayoutAdmin";
+}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Marka Ekle</h4>
+                    <hr>
+                    <form asp-controller="Brand" asp-action="BrandCreate" method="post">
+                        <div class="form-group">
+                            <label for="BrandName">Marka</label>
+                            <input type="text" asp-for="BrandName" id="BrandName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success" type="submit">Kaydet</button>
+                            <a asp-area="Admin" asp-controller="Brand" asp-action="BrandList" class="btn btn-dark">Geri</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

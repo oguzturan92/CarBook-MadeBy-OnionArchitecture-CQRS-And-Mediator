@@ -1,0 +1,38 @@
+@model UpdateBannerDto
+@{
+    ViewData["Title"] = "BannerUpdate";
+    Layout = "_LayoutAdmin";
+}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Banner Düzenle</h4>
+                    <hr>
+                    <form asp-controller="Banner" asp-action="BannerUpdate" method="post">
+                        <input type="hidden" asp-for="BannerId">
+                        <div class="form-group">
+                            <label for="BannerTitle">Başlık</label>
+                            <input type="text" asp-for="BannerTitle" id="BannerTitle" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="BannerSubTitle">Alt Başlık</label>
+                            <input type="text" asp-for="BannerSubTitle" id="BannerSubTitle" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="BannerVideoTitle">Video Başlık</label>
+                            <input type="text" asp-for="BannerVideoTitle" id="BannerVideoTitle" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="BannerVideoUrl">Video Urk</label>
+                            <input type="text" asp-for="BannerVideoUrl" id="BannerVideoUrl" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success" type="submit">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

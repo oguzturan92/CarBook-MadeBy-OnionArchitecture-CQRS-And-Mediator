@@ -1,0 +1,34 @@
+@model UpdateAboutDto
+@{
+    ViewData["Title"] = "AboutUpdate";
+    Layout = "_LayoutAdmin";
+}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Hakkımızda Düzenle</h4>
+                    <hr>
+                    <form asp-controller="About" asp-action="AboutUpdate" method="post">
+                        <input type="hidden" asp-for="AboutId">
+                        <div class="form-group">
+                            <label for="AboutTitle">Başlık</label>
+                            <input type="text" asp-for="AboutTitle" id="AboutTitle" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="AboutDescription">Açıklama</label>
+                            <textarea class="form-control" asp-for="AboutDescription" id="AboutDescription" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="AboutImage">Resim</label>
+                            <input type="text" asp-for="AboutImage" id="AboutImage" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success" type="submit">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

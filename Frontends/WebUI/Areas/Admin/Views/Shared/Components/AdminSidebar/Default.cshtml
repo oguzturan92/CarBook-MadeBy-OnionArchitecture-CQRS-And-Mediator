@@ -1,0 +1,57 @@
+
+
+    <div class="vertical-menu">
+        <div data-simplebar class="h-100">
+
+            <div class="navbar-brand-box">
+                <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="logo">
+                    <i class="mdi mdi-alpha-x-circle"></i>
+                    <span>Admin</span>
+                </a>
+            </div>
+
+            <div id="sidebar-menu">
+                <!-- Left Menu Start -->
+                <ul class="metismenu list-unstyled" id="side-menu">
+                    
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Index" class="waves-effect">
+                            <i class="fas fa-angle-right"></i><span>Site</span>
+                        </a>
+                    </li>
+                    <li class="mm-active">
+                        <a asp-area="Admin" asp-controller="" asp-action="" class="waves-effect @ViewBag.dashboardActive">
+                            <i class="fas fa-angle-right"></i><span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="mm-active">
+                        <a asp-area="Admin" asp-controller="Car" asp-action="CarList" class="waves-effect @ViewBag.carActive">
+                            <i class="fas fa-angle-right"></i><span>Araçlar</span>
+                        </a>
+                    </li>
+                    <li class="mm-active">
+                        <a asp-area="Admin" asp-controller="Feature" asp-action="FeatureList" class="waves-effect @ViewBag.featureActive">
+                            <i class="fas fa-angle-right"></i><span>Özellikler</span>
+                        </a>
+                    </li>
+                    <li class="mm-active">
+                        <a asp-area="Admin" asp-controller="Brand" asp-action="BrandList" class="waves-effect @ViewBag.brandActive">
+                            <i class="fas fa-angle-right"></i><span>Markalar</span>
+                        </a>
+                    </li>
+                    <li class="mm-active">
+                        <a asp-area="Admin" asp-controller="Banner" asp-action="BannerUpdate" class="waves-effect @ViewBag.bannerActive">
+                            <i class="fas fa-angle-right"></i><span>Banner</span>
+                        </a>
+                    </li>
+                    <li class="mm-active">
+                        <a asp-area="Admin" asp-controller="About" asp-action="AboutUpdate" class="waves-effect @ViewBag.aboutActive">
+                            <i class="fas fa-angle-right"></i><span>Hakkımızda</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            
+        </div>
+    </div>

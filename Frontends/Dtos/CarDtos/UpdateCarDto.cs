@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Frontends.Dtos.BrandDtos;
 
 namespace Frontends.Dtos.CarDtos
 {
@@ -17,5 +18,6 @@ namespace Frontends.Dtos.CarDtos
         public byte CarLuggage { get; set; }
         public string CarFuelType { get; set; }
         public int BrandId { get; set; }
+        public List<ResultBrandDto> ResultBrandDtos { get; set; }
     }
 }

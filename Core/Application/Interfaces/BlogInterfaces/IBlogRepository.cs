@@ -9,5 +9,7 @@ namespace Application.Interfaces.BlogInterfaces
     public interface IBlogRepository
     {
         Task<List<Blog>> GetBlogLast3WithAuthor();
+        Task<List<Blog>> GetAllBlogsWithAuthors();
+        Task<Blog> GetBlogByIdWithAuthor(int id);
     }
 }

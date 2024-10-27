@@ -48,7 +48,7 @@ namespace WebApi.Controller
             return Ok("FooterAddress Güncellendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> FooterAddressDelete(int id)
         {
             await _mediator.Send(new RemoveFooterAddressCommand(id));

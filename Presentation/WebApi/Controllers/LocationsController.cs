@@ -48,7 +48,7 @@ namespace WebApi.Controller
             return Ok("Location Güncellendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> LocationDelete(int id)
         {
             await _mediator.Send(new RemoveLocationCommand(id));

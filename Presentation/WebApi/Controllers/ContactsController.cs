@@ -55,7 +55,7 @@ namespace WebApi.Controllers
             return Ok("Contact Güncellendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> ContactDelete(int id)
         {
             await _removeContactCommandHandler.Handle(new RemoveContactCommand(id));

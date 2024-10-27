@@ -1,0 +1,73 @@
+@model UpdateCarDto
+@{
+    ViewData["Title"] = "CarUpdate";
+    Layout = "_LayoutAdmin";
+}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Araç Düzenle</h4>
+                    <hr>
+                    <form asp-controller="Car" asp-action="CarUpdate" method="post">
+                        <input type="hidden" asp-for="CarId">
+                        <div class="form-group">
+                            <label for="BrandId">Marka</label>
+                            <select asp-for="BrandId" class="form-control" id="BrandId">
+                                @foreach (var item in Model.ResultBrandDtos)
+                                {
+                                    <option value="@item.BrandId">@item.BrandName</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="CarModel">Model</label>
+                            <input type="text" asp-for="CarModel" id="CarModel" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="CarBıgImage">Ana Resim</label>
+                            <input type="text" asp-for="CarBıgImage" id="CarBıgImage" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="CarImage">Resim</label>
+                            <input type="text" asp-for="CarImage" id="CarImage" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="CarKm">Km</label>
+                            <input type="text" asp-for="CarKm" id="CarKm" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="CarTransmission">Vites Tipi</label>
+                            <select asp-for="CarTransmission" class="form-control" id="CarTransmission">
+                                <option value="Manuel">Manuel</option>
+                                <option value="Yarı Otomatik">Yarı Otomatik</option>
+                                <option value="Otomatik">Otomatik</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="CarSeat">Koltuk Sayısı</label>
+                            <input type="text" asp-for="CarSeat" id="CarSeat" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="CarLuggage">Bagaj Hacmi</label>
+                            <input type="text" asp-for="CarLuggage" id="CarLuggage" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="CarFuelType">Yakıt Tipi</label>
+                            <select asp-for="CarFuelType" class="form-control" id="CarFuelType">
+                                <option value="Benzin">Benzin</option>
+                                <option value="Dizel">Dizel</option>
+                                <option value="Hybrid">Hybrid</option>
+                                <option value="Elektrik">Elektrik</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success" type="submit">Kaydet</button>
+                            <a asp-area="Admin" asp-controller="Car" asp-action="CarList" class="btn btn-dark">Geri</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

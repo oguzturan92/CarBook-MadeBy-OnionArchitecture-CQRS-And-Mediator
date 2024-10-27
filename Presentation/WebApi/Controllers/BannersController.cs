@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Application.Features.CQRS.Commands.BannerCommands;
 using Application.Features.CQRS.Handlers.BannerHandlers;
-using Application.Features.CQRS.Queries.BannerQueries;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
@@ -15,23 +14,12 @@ namespace WebApi.Controllers
     {
         private readonly CreateBannerCommandHandler _createBannerCommandHandler;
         private readonly UpdateBannerCommandHandler _updateBannerCommandHandler;
-        private readonly RemoveBannerCommandHandler _removeBannerCommandHandler;
-        private readonly GetBannerByIdQueryHandler _getBannerByIdQueryHandler;
-        private readonly GetBannerQueryHandler _getBannerQueryHandler;
-        public BannersController(CreateBannerCommandHandler createBannerCommandHandler, UpdateBannerCommandHandler updateBannerCommandHandler, RemoveBannerCommandHandler removeBannerCommandHandler, GetBannerByIdQueryHandler getBannerByIdQueryHandler, GetBannerQueryHandler getBannerQueryHandler)
+        private readonly GetBannerOneQueryHandler _getBannerOneQueryHandler;
+        public BannersController(CreateBannerCommandHandler createBannerCommandHandler, UpdateBannerCommandHandler updateBannerCommandHandler, GetBannerOneQueryHandler getBannerOneQueryHandler)
         {
             _createBannerCommandHandler = createBannerCommandHandler;
             _updateBannerCommandHandler = updateBannerCommandHandler;
-            _removeBannerCommandHandler = removeBannerCommandHandler;
-            _getBannerByIdQueryHandler = getBannerByIdQueryHandler;
-            _getBannerQueryHandler = getBannerQueryHandler;
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> BannerList()
-        {
-            var values = await _getBannerQueryHandler.Handle();
-            return Ok(values);
+            _getBannerOneQueryHandler = getBannerOneQueryHandler;
         }
 
         [HttpPost]
@@ -41,10 +29,10 @@ namespace WebApi.Controllers
             return Ok("Banner Eklendi");
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> BannerGetById(int id)
+        [HttpGet]
+        public async Task<IActionResult> BannerGet()
         {
-            var value = await _getBannerByIdQueryHandler.Handle(new GetBannerByIdQuery(id));
+            var value = await _getBannerOneQueryHandler.Handle();
             return Ok(value);
         }
 
@@ -53,13 +41,6 @@ namespace WebApi.Controllers
         {
             await _updateBannerCommandHandler.Handle(command);
             return Ok("Banner Güncellendi");
-        }
-
-        [HttpDelete]
-        public async Task<IActionResult> BannerDelete(int id)
-        {
-            await _removeBannerCommandHandler.Handle(new RemoveBannerCommand(id));
-            return Ok("Banner Silindi");
         }
 
     }

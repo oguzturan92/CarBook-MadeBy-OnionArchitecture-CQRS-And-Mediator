@@ -48,7 +48,7 @@ namespace WebApi.Controller
             return Ok("Service Güncellendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> ServiceDelete(int id)
         {
             await _mediator.Send(new RemoveServiceCommand(id));

@@ -17,6 +17,17 @@ namespace Persistance.Repositories.BlogRepositories
             _context = context;
         }
 
+        public async Task<List<Blog>> GetAllBlogsWithAuthors()
+        {
+            var values = await _context.Blogs.Include(x => x.Author).ToListAsync();
+            return values;
+        }
+
+        public async Task<Blog> GetBlogByIdWithAuthor(int id)
+        {
+            return await _context.Blogs.Where(x => x.BlogId == id).Include(x => x.Author).FirstOrDefaultAsync();
+        }
+
         public async Task<List<Blog>> GetBlogLast3WithAuthor()
         {
             return await _context.Blogs.OrderByDescending(x => x.BlogId).Take(3).Include(x => x.Author).ToListAsync();
