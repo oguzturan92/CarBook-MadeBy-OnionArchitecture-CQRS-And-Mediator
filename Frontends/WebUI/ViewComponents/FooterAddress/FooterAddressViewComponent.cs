@@ -23,8 +23,8 @@ namespace WebUI.ViewComponents.FooterAddress
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultFooterAddressDto>>(jsonData);
-                return View(values);
+                var updateFooterAddressDto = JsonConvert.DeserializeObject<UpdateFooterAddressDto>(jsonData);
+                return View(updateFooterAddressDto);
             }
             return View();
         }

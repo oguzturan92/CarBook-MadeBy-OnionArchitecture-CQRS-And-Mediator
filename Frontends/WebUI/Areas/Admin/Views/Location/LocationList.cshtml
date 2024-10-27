@@ -1,0 +1,50 @@
+@model List<ResultLocationDto>
+@{
+    ViewData["Title"] = "LocationList";
+    Layout = "_LayoutAdmin";
+    int count = 0;
+}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Lokasyon Listesi</h4>
+                    @if (Model.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover mb-0">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Marka</th>
+                                        <th colspan="2"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <th>@count</th>
+                                            <td>@item.LocationName</td>
+                                            <td><a asp-area="Admin" asp-controller="Location" asp-action="LocationUpdate" asp-route-id="@item.LocationId" class="btn btn-sm btn-warning"><i class="fas fa-pencil-alt"></i></a></td>
+                                            <td><a asp-area="Admin" asp-controller="Location" asp-action="LocationDelete" asp-route-id="@item.LocationId" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    } else
+                    {
+                        <div class="alert alert-info mb-0" role="alert">Sonuç Bulunamadı</div>
+                    }
+                    <div class="row">
+                        <div class="col-12 mt-3">
+                            <a asp-area="Admin" asp-controller="Location" asp-action="LocationCreate" class="btn btn-success">Yeni</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

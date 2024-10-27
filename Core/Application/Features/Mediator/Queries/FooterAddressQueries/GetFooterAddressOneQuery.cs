@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Application.FooterAddresss.Mediator.Results.FooterAddressResults;
 using MediatR;
 
-namespace Application.FooterAddresss.Mediator.Queries.FooterAddressQueries
+namespace Application.Features.Mediator.Queries.FooterAddressQueries
 {
-    public class GetFooterAddressQuery : IRequest<List<GetFooterAddressQueryResult>>
+    public class GetFooterAddressOneQuery : IRequest<GetFooterAddressOneQueryResult>
     {
         
     }

@@ -53,5 +53,12 @@ namespace WebApi.Controllers
             _commentsRepository.Delete(comment);
             return Ok("Yorum Silindi");
         }
+
+        [HttpGet("CommentListByBlogId/{blogId}")]
+        public IActionResult CommentListByBlogId(int blogId)
+        {
+            var values = _commentsRepository.GetAllByBlogId(blogId);
+            return Ok(values);
+        }
     }
 }

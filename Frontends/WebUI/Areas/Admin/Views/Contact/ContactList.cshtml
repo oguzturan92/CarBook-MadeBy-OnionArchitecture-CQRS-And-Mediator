@@ -1,0 +1,54 @@
+@model List<ResultContactDto>
+@{
+    ViewData["Title"] = "ContactList";
+    Layout = "_LayoutAdmin";
+    int count = 0;
+}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Mesaj Listesi</h4>
+                    @if (Model.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover mb-0">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th>Ad Soyad</th>
+                                        <th>Konu</th>
+                                        <th colspan="2"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <th>@count</th>
+                                            <td>@item.ContactDate.ToString("dd MMM yyy HH:mm:ss")</td>
+                                            <td>@item.ContactName</td>
+                                            <td>@item.ContactSubject</td>
+                                            <td><a asp-area="Admin" asp-controller="Contact" asp-action="ContactUpdate" asp-route-id="@item.ContactId" class="btn btn-sm btn-primary"><i class="fas fa-eye"></i></a></td>
+                                            <td><a asp-area="Admin" asp-controller="Contact" asp-action="ContactDelete" asp-route-id="@item.ContactId" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    } else
+                    {
+                        <div class="alert alert-info mb-0" role="alert">Sonuç Bulunamadı</div>
+                    }
+                    <div class="row">
+                        <div class="col-12 mt-3">
+                            <a asp-area="Admin" asp-controller="Contact" asp-action="ContactCreate" class="btn btn-success">Yeni</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

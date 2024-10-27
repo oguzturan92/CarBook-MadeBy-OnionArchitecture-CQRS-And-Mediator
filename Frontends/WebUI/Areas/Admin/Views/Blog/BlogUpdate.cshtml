@@ -1,0 +1,54 @@
+@model UpdateBlogDto
+@{
+    ViewData["Title"] = "BlogUpdate";
+    Layout = "_LayoutAdmin";
+}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Blog Düzenle</h4>
+                    <hr>
+                    <form asp-controller="Blog" asp-action="BlogUpdate" method="post">
+                        <input type="hidden" asp-for="BlogId">
+                        <input type="hidden" asp-for="BlogDate">
+                        <div class="form-group">
+                            <label for="AuthorId">Yazar</label>
+                            <select asp-for="AuthorId" class="form-control" id="AuthorId">
+                                @foreach (var item in Model.ResultAuthorDtos)
+                                {
+                                    <option value="@item.AuthorId">@item.AuthorName</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="CategoryId">Kategori</label>
+                            <select asp-for="CategoryId" class="form-control" id="CategoryId">
+                                @foreach (var item in Model.ResultCategoryDtos)
+                                {
+                                    <option value="@item.CategoryId">@item.CategoryName</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="BlogTitle">Başlık</label>
+                            <input type="text" asp-for="BlogTitle" id="BlogTitle" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="BlogImage">Resim</label>
+                            <input type="text" asp-for="BlogImage" id="BlogImage" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="BlogDescription">Açıklama</label>
+                            <textarea class="form-control" asp-for="BlogDescription" id="BlogDescription" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success" type="submit">Kaydet</button>
+                            <a asp-area="Admin" asp-controller="Blog" asp-action="BlogList" class="btn btn-dark">Geri</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

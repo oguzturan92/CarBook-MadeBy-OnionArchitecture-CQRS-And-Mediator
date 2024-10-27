@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Application.Features.Mediator.Queries.FooterAddressQueries;
 using Application.FooterAddresss.Mediator.Commands.FooterAddressCommands;
-using Application.FooterAddresss.Mediator.Queries.FooterAddressQueries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,24 +20,17 @@ namespace WebApi.Controller
             _mediator = mediator;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> FooterAddressList()
-        {
-            var values = await _mediator.Send(new GetFooterAddressQuery());
-            return Ok(values);
-        }
-
         [HttpPost]
         public async Task<IActionResult> FooterAddressCreate(CreateFooterAddressCommand command)
         {
             await _mediator.Send(command);
-            return Ok("FooterAddress Eklendi");
+            return Ok("Footer Adres Eklendi");
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> FooterAddressGetById(int id)
+        [HttpGet]
+        public async Task<IActionResult> FooterAddressGetById()
         {
-            var value = await _mediator.Send(new GetFooterAddressByIdQuery(id));
+            var value = await _mediator.Send(new GetFooterAddressOneQuery());
             return Ok(value);
         }
 
@@ -45,14 +38,7 @@ namespace WebApi.Controller
         public async Task<IActionResult> FooterAddressUpdate(UpdateFooterAddressCommand command)
         {
             await _mediator.Send(command);
-            return Ok("FooterAddress Güncellendi");
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> FooterAddressDelete(int id)
-        {
-            await _mediator.Send(new RemoveFooterAddressCommand(id));
-            return Ok("FooterAddress Silindi");
+            return Ok("Footer Adres Güncellendi");
         }
 
     }

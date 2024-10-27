@@ -40,6 +40,11 @@ namespace Persistance.Repositories.CommentRepositoires
             }).ToList();
         }
 
+        public List<Comment> GetAllByBlogId(int blogId)
+        {
+            return _context.Comments.Where(i => i.BlogId == blogId).ToList();
+        }
+
         public Comment GetById(int id)
         {
             return _context.Comments.Find(id);

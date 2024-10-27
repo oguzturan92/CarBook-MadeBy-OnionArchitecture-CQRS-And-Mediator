@@ -1,0 +1,26 @@
+@model CreatePricingDto
+@{
+    ViewData["Title"] = "PricingCreate";
+    Layout = "_LayoutAdmin";
+}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Marka Ekle</h4>
+                    <hr>
+                    <form asp-controller="Pricing" asp-action="PricingCreate" method="post">
+                        <div class="form-group">
+                            <label for="PricingName">Marka</label>
+                            <input type="text" asp-for="PricingName" id="PricingName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success" type="submit">Kaydet</button>
+                            <a asp-area="Admin" asp-controller="Pricing" asp-action="PricingList" class="btn btn-dark">Geri</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

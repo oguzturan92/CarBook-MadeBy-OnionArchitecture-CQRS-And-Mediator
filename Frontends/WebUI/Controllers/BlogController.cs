@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Dtos.BlogDtos;
-using Dtos.CategoryDtos;
+using Frontends.Dtos.CategoryDtos;
 using Dtos.TagCloudDtos;
 using Frontends.Dtos.BlogDtos;
 using Microsoft.AspNetCore.Mvc;

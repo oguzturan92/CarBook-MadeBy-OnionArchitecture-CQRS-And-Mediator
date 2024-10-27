@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Application.FooterAddresss.Mediator.Results.FooterAddressResults
 {
-    public class GetFooterAddressByIdQueryResult
+    public class GetFooterAddressOneQueryResult
     {
         public int FooterAddressId { get; set; }
         public string FooterAddressDescription { get; set; }

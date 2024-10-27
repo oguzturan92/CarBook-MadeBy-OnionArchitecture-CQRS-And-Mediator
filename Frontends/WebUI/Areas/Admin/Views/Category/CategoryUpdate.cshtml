@@ -1,0 +1,27 @@
+@model UpdateCategoryDto
+@{
+    ViewData["Title"] = "CategoryUpdate";
+    Layout = "_LayoutAdmin";
+}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Kategori Düzenle</h4>
+                    <hr>
+                    <form asp-controller="Category" asp-action="CategoryUpdate" method="post">
+                        <input type="hidden" asp-for="CategoryId">
+                        <div class="form-group">
+                            <label for="CategoryName">Ad</label>
+                            <input type="text" asp-for="CategoryName" id="CategoryName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success" type="submit">Kaydet</button>
+                            <a asp-area="Admin" asp-controller="Category" asp-action="CategoryList" class="btn btn-dark">Geri</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

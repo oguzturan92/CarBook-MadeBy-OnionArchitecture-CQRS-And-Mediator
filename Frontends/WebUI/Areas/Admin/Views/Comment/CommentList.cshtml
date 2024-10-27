@@ -1,0 +1,54 @@
+@model List<ResultCommentDto>
+@{
+    ViewData["Title"] = "CommentList";
+    Layout = "_LayoutAdmin";
+    int count = 0;
+}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Yorum Listesi</h4>
+                    @if (Model.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover mb-0">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th>Ad Soyad</th>
+                                        <th>Yorum</th>
+                                        @* <th colspan="2"></th> *@
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <th>@count</th>
+                                            <td>@item.CommentCreateDate.ToString("dd MMM yyy HH:mm:ss")</td>
+                                            <td>@item.CommentFullname</td>
+                                            <td>@item.CommentContent</td>
+                                            @* <td><a asp-area="Admin" asp-controller="Brand" asp-action="BrandUpdate" asp-route-id="@item.BrandId" class="btn btn-sm btn-warning"><i class="fas fa-pencil-alt"></i></a></td>
+                                            <td><a asp-area="Admin" asp-controller="Brand" asp-action="BrandDelete" asp-route-id="@item.BrandId" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></a></td> *@
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    } else
+                    {
+                        <div class="alert alert-info mb-0" role="alert">Sonuç Bulunamadı</div>
+                    }
+                    <div class="row">
+                        <div class="col-12 mt-3">
+                            <a asp-area="Admin" asp-controller="Blog" asp-action="BlogList" class="btn btn-dark">Geri</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -2,26 +2,27 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Application.FooterAddresss.Mediator.Queries.FooterAddressQueries;
+using Application.Features.Mediator.Queries.FooterAddressQueries;
 using Application.FooterAddresss.Mediator.Results.FooterAddressResults;
 using Application.Interfaces;
+using Application.Interfaces.FooterAddressInterfaces;
 using Domain.Entities;
 using MediatR;
 
 namespace Application.FooterAddresss.Mediator.Handlers.FooterAddressHandlers
 {
-    public class GetFooterAddressByIdQueryHandler : IRequestHandler<GetFooterAddressByIdQuery, GetFooterAddressByIdQueryResult>
+    public class GetFooterAddressOneQueryHandler : IRequestHandler<GetFooterAddressOneQuery, GetFooterAddressOneQueryResult>
     {
-        private readonly IRepository<FooterAddress> _repository;
-        public GetFooterAddressByIdQueryHandler(IRepository<FooterAddress> repository)
+        private readonly IFooterAddressRepository _repository;
+        public GetFooterAddressOneQueryHandler(IFooterAddressRepository repository)
         {
             _repository = repository;
         }
 
-        public async Task<GetFooterAddressByIdQueryResult> Handle(GetFooterAddressByIdQuery request, CancellationToken cancellationToken)
+        public async Task<GetFooterAddressOneQueryResult> Handle(GetFooterAddressOneQuery request, CancellationToken cancellationToken)
         {
-            var value = await _repository.GetByIdAsync(request.Id);
-            var result = new GetFooterAddressByIdQueryResult
+            var value = await _repository.GetFirstOrDefault();
+            var result = new GetFooterAddressOneQueryResult
             {
                 FooterAddressId = value.FooterAddressId,
                 FooterAddressDescription = value.FooterAddressDescription,

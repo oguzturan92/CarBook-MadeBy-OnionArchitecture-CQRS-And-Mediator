@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Dtos.CategoryDtos
+namespace Frontends.Dtos.CategoryDtos
 {
     public class ResultCategoryDto
     {

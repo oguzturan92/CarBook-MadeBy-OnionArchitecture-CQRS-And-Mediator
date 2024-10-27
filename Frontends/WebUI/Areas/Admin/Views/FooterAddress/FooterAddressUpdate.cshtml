@@ -1,0 +1,38 @@
+@model UpdateFooterAddressDto
+@{
+    ViewData["Title"] = "FooterAddressUpdate";
+    Layout = "_LayoutAdmin";
+}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Footer Adres Düzenle</h4>
+                    <hr>
+                    <form asp-controller="FooterAddress" asp-action="FooterAddressUpdate" method="post">
+                        <input type="hidden" asp-for="FooterAddressId">
+                        <div class="form-group">
+                            <label for="FooterAddressDescription">Adres</label>
+                            <input type="text" asp-for="FooterAddressDescription" id="FooterAddressDescription" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="FooterAddressContent">Açıklama</label>
+                            <textarea class="form-control" asp-for="FooterAddressContent" id="FooterAddressContent" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="FooterAddressPhone">Telefon</label>
+                            <input type="text" asp-for="FooterAddressPhone" id="FooterAddressPhone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="FooterAddressMail">Mail</label>
+                            <input type="text" asp-for="FooterAddressMail" id="FooterAddressMail" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success" type="submit">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

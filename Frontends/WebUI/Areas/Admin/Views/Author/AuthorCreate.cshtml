@@ -1,0 +1,34 @@
+@model CreateAuthorDto
+@{
+    ViewData["Title"] = "AuthorCreate";
+    Layout = "_LayoutAdmin";
+}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Yazar Ekle</h4>
+                    <hr>
+                    <form asp-controller="Author" asp-action="AuthorCreate" method="post">
+                        <div class="form-group">
+                            <label for="AuthorName">Marka</label>
+                            <input type="text" asp-for="AuthorName" id="AuthorName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="AuthorImage">Resim</label>
+                            <input type="text" asp-for="AuthorImage" id="AuthorImage" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="AuthorDescription">Açıklama</label>
+                            <input type="text" asp-for="AuthorDescription" id="AuthorDescription" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success" type="submit">Kaydet</button>
+                            <a asp-area="Admin" asp-controller="Author" asp-action="AuthorList" class="btn btn-dark">Geri</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -26,7 +26,7 @@ namespace WebApi.Controllers
         public async Task<IActionResult> AboutCreate(CreateAboutCommand command)
         {
             await _createAboutCommandHandler.Handle(command);
-            return Ok("About Eklendi");
+            return Ok("Hakkımızda Eklendi");
         }
 
         [HttpGet]
@@ -40,7 +40,7 @@ namespace WebApi.Controllers
         public async Task<IActionResult> AboutUpdate(UpdateAboutCommand command)
         {
             await _updateAboutCommandHandler.Handle(command);
-            return Ok("About Güncellendi");
+            return Ok("Hakkımızda Güncellendi");
         }
 
     }
