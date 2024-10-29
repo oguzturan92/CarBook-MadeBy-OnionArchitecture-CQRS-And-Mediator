@@ -24,6 +24,8 @@ using Persistance.Repositories.AboutRepositories;
 using Application.Interfaces.AboutInterfaces;
 using Application.Interfaces.FooterAddressInterfaces;
 using Persistance.Repositories.FooterAddressRepositories;
+using Application.Interfaces.DashboardInterfaces;
+using Persistance.Repositories.DashboardRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,6 +40,7 @@ var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddScoped(typeof(IBannerRepository), typeof(BannerRepository));
     builder.Services.AddScoped(typeof(IBlogRepository), typeof(BlogRepository));
     builder.Services.AddScoped(typeof(ICarPricingRepository), typeof(CarPricingRepository));
+    builder.Services.AddScoped(typeof(IDashboardRepository), typeof(DashboardRepository));
     builder.Services.AddScoped(typeof(ITagCloudRepository), typeof(TagCloudRepository));
     builder.Services.AddScoped(typeof(IFooterAddressRepository), typeof(FooterAddressRepository));
     builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(CommentRepository<>));

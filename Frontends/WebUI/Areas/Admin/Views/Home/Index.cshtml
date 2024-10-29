@@ -1,4 +1,329 @@
+@model DashboardModel
 @{
     ViewData["Title"] = "Dashboard";
     Layout = "_LayoutAdmin";
 }
+
+    <div class="row">
+        
+        <div class="col-md-6 col-xl-3">
+            <div class="card" style="background-color: #E74C3C ; border-color: #E74C3C ;">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0 text-white">GetCarCount</h5>
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0 text-white">
+                                @Model.GetCarCount
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="progress badge-soft-light shadow-sm" style="height: 5px;">
+                        <div class="progress-bar bg-light" role="progressbar" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+            <div class="card" style="background-color: #3498DB  ; border-color: #3498DB  ;">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0 text-white">GetLocationCount</h5>
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center text-white mb-0">
+                                @Model.GetLocationCount
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                        <div class="progress-bar bg-light" role="progressbar" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+            <div class="card" style="background-color: #F39C12 ; border-color: #F39C12 ;">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0 text-white">GetAuthorCount</h5>
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center text-white mb-0">
+                                @Model.GetAuthorCount
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                        <div class="progress-bar bg-light" role="progressbar" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+            <div class="card" style="background-color: #8E44AD ; border-color: #8E44AD ;">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0 text-white">GetBlogCount</h5>
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center text-white mb-0">
+                                @Model.GetBlogCount
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                        <div class="progress-bar bg-light" role="progressbar" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+            <div class="card" style="background-color: #27AE60 ; border-color: #27AE60 ;">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0 text-white">GetBrandCount</h5>
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center text-white mb-0">
+                                @Model.GetBrandCount
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                        <div class="progress-bar bg-light" role="progressbar" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+            <div class="card" style="background-color: #D35400 ; border-color: #D35400 ;">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0 text-white">GetAvgRentPriceForDaily</h5>
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center text-white mb-0">
+                                @Model.GetAvgRentPriceForDaily
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                        <div class="progress-bar bg-light" role="progressbar" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+            <div class="card" style="background-color: #C0392B ; border-color: #C0392B ;">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0 text-white">GetAvgRentPriceForWeekly</h5>
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center text-white mb-0">
+                                @Model.GetAvgRentPriceForWeekly
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                        <div class="progress-bar bg-light" role="progressbar" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+            <div class="card" style="background-color: #2980B9 ; border-color: #2980B9 ;">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0 text-white">GetAvgRentPriceForMonthly</h5>
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center text-white mb-0">
+                                @Model.GetAvgRentPriceForMonthly
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                        <div class="progress-bar bg-light" role="progressbar" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+            <div class="card" style="background-color: #16A085 ; border-color: #16A085 ;">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0 text-white">GetCarCountByTranmissionIsAuto</h5>
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center text-white mb-0">
+                                @Model.GetCarCountByTranmissionIsAuto
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                        <div class="progress-bar bg-light" role="progressbar" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+            <div class="card" style="background-color: #7D3C98 ; border-color: #7D3C98 ;">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0 text-white">GetBrandNameByMaxCar</h5>
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center text-white mb-0">
+                                @Model.GetBrandNameByMaxCar
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                        <div class="progress-bar bg-light" role="progressbar" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+            <div class="card" style="background-color: #F1C40F ; border-color: #F1C40F ;">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0 text-white">GetBlogTitleByMaxBlogComment</h5>
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-8">
+                            <p class="d-flex align-items-center text-white mb-0">
+                                @Model.GetBlogTitleByMaxBlogComment
+                            </p>
+                        </div>
+                    </div>
+                    <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                        <div class="progress-bar bg-light" role="progressbar" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+            <div class="card" style="background-color: #2C3E50 ; border-color: #2C3E50 ;">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0 text-white">GetCarCountByKmSmallerThen1000</h5>
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center text-white mb-0">
+                                @Model.GetCarCountByKmSmallerThen1000
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                        <div class="progress-bar bg-light" role="progressbar" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+            <div class="card" style="background-color: #A569BD ; border-color: #A569BD ;">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0 text-white">GetCarCountByFuelGasolineOrDiesel</h5>
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center text-white mb-0">
+                                @Model.GetCarCountByFuelGasolineOrDiesel
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                        <div class="progress-bar bg-light" role="progressbar" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+            <div class="card" style="background-color: #E67E22 ; border-color: #E67E22 ;">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0 text-white">GetCarCountByFuelElectric</h5>
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center text-white mb-0">
+                                @Model.GetCarCountByFuelElectric
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                        <div class="progress-bar bg-light" role="progressbar" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+            <div class="card" style="background-color: #F1948A ; border-color: #F1948A ;">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0 text-white">GetCarBrandAndModelByRentPriceDailyMax</h5>
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center text-white mb-0">
+                                @Model.GetCarBrandAndModelByRentPriceDailyMax
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                        <div class="progress-bar bg-light" role="progressbar" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-xl-3">
+            <div class="card" style="background-color: #D5DBDB ; border-color: #D5DBDB ;">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0 text-white">GetCarBrandAndModelByRentPriceDailyMin</h5>
+                    </div>
+                    <div class="row d-flex align-items-center mb-4">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center text-white mb-0">
+                                @Model.GetCarBrandAndModelByRentPriceDailyMin
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="progress badge-soft-light shadow-sm" style="height: 7px;">
+                        <div class="progress-bar bg-light" role="progressbar" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
